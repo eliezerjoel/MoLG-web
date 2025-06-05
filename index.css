@@ -1,0 +1,360 @@
+/* Basic Reset for better cross-browser consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+body {
+  background-color: rgb(223, 245, 188);
+  font-family: Arial, sans-serif; /* Add a fallback font */
+}
+
+nav {
+  background-color: rgb(112, 16, 16);
+  padding: 1rem; /* Consistent padding unit */
+  margin-bottom: 1rem; /* Consistent margin unit */
+  display: flex;
+  justify-content: space-between; /* Pushes logo to one side, menu to the other */
+  align-items: center; /* Vertically centers items in the nav */
+}
+
+.nav-logo img {
+  width: 3rem; /* Consistent unit */
+  height: auto;
+  display: block; /* Removes any extra space below the image */
+}
+
+.nav-b {
+  display: flex; /* Make nav-b a flex container to align its children */
+  align-items: center; /* Vertically center h3 and ul */
+  gap: 1.5rem; /* Space between h3 and ul */
+  background-color: rgb(173, 209, 15); /* This background is hard to read against the nav's background. Consider removing or changing. */
+  padding: 0.5rem 1rem; /* Add some padding to nav-b itself */
+  border-radius: 5px; /* Slightly rounded corners */
+}
+
+.nav-b h3 {
+  color: rgb(112, 16, 16); /* Make sure heading color is readable */
+  margin: 0; /* Remove default margin */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem; /* Space between list items */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+nav ul li a {
+  color: white; /* Ensure link color is white */
+  text-decoration: none;
+  padding: 0.5rem 0.8rem; /* Add padding for better clickable area */
+  border-radius: 4px;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Space between main sections */
+  padding: 1rem; /* Add some overall padding to main content */
+  max-width: 1200px; /* Constrain max width for better readability */
+  margin: 0 auto; /* Center the main content */
+}
+
+section {
+  padding: 2rem; /* Consistent padding for all sections */
+  background-color: white; /* Give sections a background */
+  border-radius: 8px; /* Slightly rounded corners for sections */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+}
+
+#home {
+  min-height: 50vh; /* Use min-height to allow content to expand */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+  align-items: center; /* Horizontally center content */
+  text-align: center;
+  background-color: #e0f2f7; /* Lighter background */
+  /* Remove background-color: aqua; */
+}
+
+#home h2 {
+  color: rgb(112, 16, 16);
+  margin-bottom: 1rem;
+}
+
+#home p {
+  max-width: 700px; /* Constrain paragraph width for readability */
+  line-height: 1.6; /* Improve readability */
+  color: #333;
+}
+
+#mission,
+#vision {
+  display: flex;
+  align-items: center; /* Vertically align text and image containers */
+  gap: 2rem; /* Space between text and image */
+}
+
+#mission .hero-text,
+#vision .hero-text {
+  flex: 1; /* Allow text to take available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+  padding: 1.5rem;
+  background-color: #f7f7e0; /* Light background */
+  border-radius: 8px;
+}
+
+#mission .hero-img,
+#vision .hero-img {
+  flex: 1; /* Allow image to take available space */
+  display: flex;
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically */
+  padding: 1.5rem;
+  background-color: #e0f7e9; /* Light background */
+  border-radius: 8px;
+}
+
+#mission .hero-img img,
+#vision .hero-img img {
+  max-width: 100%; /* Ensure image fits within its container */
+  height: auto;
+  display: block; /* Removes extra space below image */
+  border-radius: 8px; /* Rounded corners for images */
+}
+
+#achievements {
+  text-align: center; /* Center the main heading */
+}
+
+#achievements h2 {
+  color: rgb(112, 16, 16);
+  margin-bottom: 1.5rem;
+}
+
+#achievements h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.markets {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.market-header {
+  background-color: rgb(112, 16, 16);
+  padding: 0.8rem;
+  color: yellow;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.market-1 {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  gap: 1.5rem; /* Space between image and text */
+  justify-content: center; /* Center items if they wrap */
+  align-items: flex-start; /* Align items to the top if they are different heights */
+}
+
+.markets-img {
+  flex: 1; /* Allow image container to take available space */
+  min-width: 300px; /* Ensure image container has a minimum width before wrapping */
+  text-align: center;
+}
+
+.markets-img img {
+  max-width: 100%; /* Image should not overflow its container */
+  height: auto;
+  display: block;
+  margin: 0 auto 0.5rem auto; /* Center image and add space below */
+  border-radius: 8px;
+}
+
+.markets-img p {
+  font-style: italic;
+  color: #555;
+}
+
+.markets-text {
+  flex: 2; /* Allow text content to take more space */
+  min-width: 300px; /* Ensure text container has a minimum width before wrapping */
+  text-align: left; /* Align text to the left */
+}
+
+.markets-text h4 {
+  color: rgb(112, 16, 16);
+  margin-bottom: 0.8rem;
+}
+
+.markets-text ul {
+  list-style: disc inside; /* Standard bullet points */
+  padding-left: 1rem;
+  color: #333;
+}
+
+.markets-text ul li {
+  margin-bottom: 0.5rem;
+}
+
+#pdm {
+  padding: 2rem;
+  background-color: #f0f0f0;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.flag {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2rem; /* Space above the flag */
+}
+
+.flag div {
+  height: 1rem; /* Consistent height for flag stripes */
+  width: 100%;
+}
+
+.flag .black {
+  background-color: black;
+}
+
+.flag .yellow {
+  background-color: yellow;
+}
+
+.flag .red {
+  background-color: red;
+  height: 1.5rem; /* Slightly thicker red stripe as per Ugandan flag */
+}
+
+footer {
+  width: 100%; /* Make footer full width */
+  max-width: 1200px; /* Align with main content max-width */
+  margin: 2rem auto 0 auto; /* Center footer and add space above */
+  padding: 1.5rem;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: space-between; /* Space out logo and text */
+  align-items: center;
+  border-top: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+
+footer .logo {
+  display: flex;
+  gap: 1rem; /* Space between the two logos */
+  background-color: transparent; /* Remove background color */
+  height: auto; /* Let content define height */
+  align-items: center;
+  margin-bottom: 1rem; /* Space below logos on smaller screens */
+}
+
+footer .logo img {
+  width: 3rem; /* Adjust logo size */
+  height: auto;
+}
+
+footer .text {
+  flex: 1; /* Allow text to take available space */
+  min-width: 250px; /* Minimum width for text block before wrapping */
+  text-align: center;
+  background-color: transparent; /* Remove background color */
+  height: auto; /* Let content define height */
+}
+
+footer .text h3 {
+  color: rgb(112, 16, 16);
+  margin-bottom: 0.5rem;
+}
+
+footer .text p {
+  margin-bottom: 0.3rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+  }
+
+  .nav-b {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      gap: 0.5rem;
+  }
+
+  nav ul {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.5rem;
+  }
+
+  #mission,
+  #vision,
+  .market-1,
+  footer {
+      flex-direction: column; /* Stack items vertically on small screens */
+      text-align: center;
+  }
+
+  #mission .hero-text,
+  #vision .hero-text,
+  #mission .hero-img,
+  #vision .hero-img,
+  .markets-img,
+  .markets-text,
+  footer .logo,
+  footer .text {
+      width: 100%; /* Take full width on small screens */
+      min-width: unset; /* Remove min-width constraints */
+      margin-bottom: 1rem; /* Add space between stacked items */
+  }
+
+  footer .logo {
+      justify-content: center; /* Center logos when stacked */
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul li a {
+      padding: 0.3rem 0.5rem;
+      font-size: 0.9rem;
+  }
+
+  h2 {
+      font-size: 1.8rem;
+  }
+
+  h3 {
+      font-size: 1.3rem;
+  }
+
+  p, ul li {
+      font-size: 0.9rem;
+  }
+}
